@@ -28,17 +28,17 @@ function Assignments() {
 
       const [workersResponse, sitesResponse, assignmentsResponse] =
         await Promise.all([
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/sites", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/sites", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/assignments", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/assignments", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -72,7 +72,7 @@ function Assignments() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/assignments",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/assignments",
         {
           method: "POST",
           headers: {
@@ -108,7 +108,7 @@ function Assignments() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        ` https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/assignments/${assignmentId}/unassign`,
+        ` https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/assignments/${assignmentId}/unassign`,
         {
           method: "PUT",
           headers: {

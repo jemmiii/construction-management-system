@@ -36,7 +36,7 @@ const [selectedSite, setSelectedSite] = useState(null);
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/sites",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/sites",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ const [selectedSite, setSelectedSite] = useState(null);
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/sites",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/sites",
         {
           method: "POST",
           headers: {
@@ -135,7 +135,7 @@ const handleStatusChange = async (site) => {
     const newStatus = !site.is_active;
 
     const response = await fetch(
-      ` https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/sites/${site.id}`,
+      ` https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/sites/${site.id}`,
       {
         method: "PUT",
         headers: {

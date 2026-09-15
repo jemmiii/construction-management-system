@@ -21,7 +21,7 @@ function AssignmentHistory() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/assignments",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/assignments",
         {
           headers: {
             Authorization: `Bearer ${token}`,

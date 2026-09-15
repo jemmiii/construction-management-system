@@ -46,7 +46,7 @@ function Workers() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -101,7 +101,7 @@ function Workers() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers",
+        " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers",
         {
           method: "POST",
           headers: {
@@ -152,7 +152,7 @@ function Workers() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        ` https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers/${editingWorker.id}`,
+        ` https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers/${editingWorker.id}`,
         {
           method: "PUT",
           headers: {
@@ -199,7 +199,7 @@ function Workers() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        ` https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers/${selectedWorker.id}`,
+        ` https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers/${selectedWorker.id}`,
         {
           method: "PUT",
           headers: {

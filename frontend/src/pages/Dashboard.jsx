@@ -33,7 +33,7 @@ function Dashboard() {
 
         // Dashboard Statistics
         const statsResponse = await fetch(
-          " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/dashboard",
+          " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/dashboard",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ function Dashboard() {
 
         // Recent Attendance
         const attendanceResponse = await fetch(
-          " https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/dashboard/recent-attendance",
+          " https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/dashboard/recent-attendance",
           {
             headers: {
               Authorization: `Bearer ${token}`,

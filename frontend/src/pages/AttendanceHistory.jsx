@@ -30,17 +30,17 @@ function AttendanceHistory() {
 
       const [attendanceResponse, sitesResponse, workersResponse] =
         await Promise.all([
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/attendance", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/attendance", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/sites", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/sites", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch(" https://reproductive-goes-vary-nirvana.trycloudflare.com  /api/workers", {
+          fetch(" https://reproductive-goes-vary-nirvana.https://construction-management-system-kx2y.onrender.com  /api/workers", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
