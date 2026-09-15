@@ -1,0 +1,678 @@
+/* =========================================
+   PREMIUM ATTENDANCE HISTORY
+========================================= */
+
+.history-page {
+  min-height: 100vh;
+  padding: 42px 48px 60px;
+  box-sizing: border-box;
+  color: #172033;
+
+  background:
+    radial-gradient(circle at 5% 0%, rgba(37, 99, 235, 0.14), transparent 28%),
+    radial-gradient(circle at 95% 10%, rgba(99, 102, 241, 0.10), transparent 25%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef3f9 100%);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.history-header {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  margin-bottom: 34px;
+  padding: 8px 0;
+}
+
+.history-header > div {
+  position: relative;
+  padding-left: 18px;
+}
+
+.history-header > div::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 5px;
+  bottom: 5px;
+
+  width: 4px;
+  border-radius: 10px;
+
+  background: linear-gradient(180deg, #2563eb, #6366f1);
+}
+
+.page-label {
+  margin: 0 0 8px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  color: #2563eb;
+}
+
+.history-header h1 {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  font-weight: 800;
+
+  color: #111827;
+}
+
+.history-header span {
+  display: block;
+  margin-top: 10px;
+
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* =========================================
+   PREMIUM BACK BUTTON
+========================================= */
+
+.back-attendance-button {
+  position: relative;
+
+  padding: 14px 23px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background:
+    linear-gradient(135deg, #172033, #293851);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(23, 32, 51, 0.20);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.back-attendance-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 30px rgba(23, 32, 51, 0.27);
+}
+
+.back-attendance-button:active {
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.history-error {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+
+  border: 1px solid #fecaca;
+  border-left: 5px solid #ef4444;
+  border-radius: 12px;
+
+  background: #fff7f7;
+  color: #b91c1c;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.07);
+}
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.history-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.history-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 132px;
+  padding: 24px 26px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(145deg, #ffffff, #f8faff);
+
+  border: 1px solid rgba(203, 213, 225, 0.7);
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.history-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  right: -45px;
+  top: -45px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.history-stat-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 35px rgba(15, 23, 42, 0.10);
+}
+
+.history-stat-card span {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #64748b;
+}
+
+.history-stat-card h2 {
+  position: relative;
+  z-index: 1;
+
+  margin: 12px 0 0;
+
+  font-size: 38px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  color: #172033;
+}
+
+/* PRESENT */
+
+.present-card {
+  border-color: rgba(16, 185, 129, 0.18);
+}
+
+.present-card::after {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.present-card h2 {
+  color: #059669;
+}
+
+/* ABSENT */
+
+.absent-card {
+  border-color: rgba(239, 68, 68, 0.16);
+}
+
+.absent-card::after {
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.absent-card h2 {
+  color: #dc2626;
+}
+
+/* HALF DAY */
+
+.half-card {
+  border-color: rgba(245, 158, 11, 0.18);
+}
+
+.half-card::after {
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.half-card h2 {
+  color: #d97706;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.history-card {
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid rgba(203, 213, 225, 0.75);
+  border-radius: 22px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 28px 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 250, 252, 0.95),
+      rgba(255, 255, 255, 0.95)
+    );
+
+  border-bottom: 1px solid #e9edf3;
+}
+
+.history-card-header h2 {
+  margin: 0;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+  color: #172033;
+}
+
+.history-card-header p {
+  margin: 7px 0 0;
+
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================================
+   CLEAR FILTER
+========================================= */
+
+.clear-filters-button {
+  padding: 11px 18px;
+
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+
+  background: white;
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.22s ease;
+}
+
+.clear-filters-button:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+
+  color: #1e293b;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   FILTER SECTION
+========================================= */
+
+.history-filters {
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    1.15fr
+    1fr
+    1fr;
+
+  gap: 18px;
+
+  padding: 26px 30px 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbfcfe,
+      #f7f9fc
+    );
+
+  border-bottom: 1px solid #e8edf3;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.filter-group label {
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  color: #64748b;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d7dee8;
+  border-radius: 11px;
+
+  background: white;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filter-group input:hover,
+.filter-group select:hover {
+  border-color: #aab7c8;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.10);
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  padding: 0 30px 10px;
+
+  box-sizing: border-box;
+}
+
+.history-table {
+  width: 100%;
+  min-width: 900px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.history-table th {
+  padding: 18px 15px;
+
+  text-align: left;
+
+  background: #f8fafc;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  color: #64748b;
+
+  border-bottom: 1px solid #e4eaf1;
+}
+
+.history-table th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.history-table th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.history-table td {
+  padding: 18px 15px;
+
+  font-size: 14px;
+  color: #475569;
+
+  border-bottom: 1px solid #edf1f5;
+
+  transition: background 0.2s ease;
+}
+
+.history-table tbody tr {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.history-table tbody tr:hover td {
+  background: #f8fbff;
+}
+
+.history-table tbody tr:hover td:first-child {
+  border-left: 3px solid #2563eb;
+  padding-left: 12px;
+}
+
+/* =========================================
+   WORKER
+========================================= */
+
+.history-worker {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.history-avatar {
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e0e7ff,
+      #dbeafe
+    );
+
+  color: #2563eb;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.history-worker strong {
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.history-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1px;
+}
+
+.history-status.present {
+  background: #dcfce7;
+  color: #15803d;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(21, 128, 61, 0.08);
+}
+
+.history-status.absent {
+  background: #fee2e2;
+  color: #dc2626;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 38, 38, 0.08);
+}
+
+.history-status.half_day {
+  background: #fef3c7;
+  color: #b45309;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(180, 83, 9, 0.08);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.history-empty {
+  padding: 65px !important;
+
+  text-align: center !important;
+
+  color: #94a3b8 !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1150px) {
+
+  .history-page {
+    padding: 32px;
+  }
+
+  .history-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .history-page {
+    padding: 22px 16px 40px;
+  }
+
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-header h1 {
+    font-size: 31px;
+  }
+
+  .back-attendance-button {
+    width: 100%;
+  }
+
+  .history-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .history-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .clear-filters-button {
+    width: 100%;
+  }
+
+  .history-filters {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .history-table-wrapper {
+    padding: 0 15px;
+  }
+}
